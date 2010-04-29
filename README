@@ -1,0 +1,15 @@
+This project provides a way to run browser based tests on a contuous integration server like Hudson.  
+
+There are several browser based testing frameworks out there.  For example:
+- jspec
+- qunit
+- sproutcore's testrunner
+
+The most functional way of using these frameworks is to open a browser and point it at a testing page configured for the framework.
+But that isn't easy to integrate with continuous integegration server, because it wants a summary of the tests that it can save with the 
+build and report on.
+
+Capybara provides a way to make this work in a generic way for these testing frameworks.  It can launch a webbrowser pointed at the 
+testing page, and then introspect the page and its javascript objects to get the results.  
+
+An alternative approach to running tests this way is to is to use env.js with rhino.  Or to use HTMLUnit.  However since that isn't running a real browser with full dom and css rendering there will always be something you can't full test.
