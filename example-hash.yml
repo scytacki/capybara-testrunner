@@ -1,0 +1,53 @@
+--- 
+failed: 1
+warnings: 0
+tests: 4
+finish: 1272379567503
+errors: 1
+total: 7
+runtime: 2709
+start: 1272379564794
+passed: 5
+assertions: 
+- result: passed
+  message: "test should equal test: test"
+  module: |-
+    views/applet.js
+    Cc.AppletView
+  test: test description
+- result: failed
+  message: There should be five choices
+  module: |-
+    views/multiple_choice_question.js
+    CC.MultipleChoiceQuestionView
+  test: multiple choice question should contain choice radio buttons
+- result: passed
+  message: "first choice should be 'one': one"
+  module: |-
+    views/multiple_choice_question.js
+    CC.MultipleChoiceQuestionView
+  test: multiple choice question should contain choice radio buttons
+- result: passed
+  message: "last choice should be 'five': five"
+  module: |-
+    views/multiple_choice_question.js
+    CC.MultipleChoiceQuestionView
+  test: multiple choice question should contain choice radio buttons
+- result: errors
+  message: "Died on test #1: InternalError: Java class org.concord.modeler.MwApplet has no public field or method named \"documentElement\""
+  module: |-
+    views/mw_applet.js
+    CC.MwAppletView
+  test: applet should contain MW jar and CML file
+- result: passed
+  message: "rendered prompt should equal given prompt: What do you think of this fine question?"
+  module: |-
+    views/question.js
+    CC.QuestionView
+  test: question should render with a prompt and a text area
+- result: passed
+  message: text area should exist
+  module: |-
+    views/question.js
+    CC.QuestionView
+  test: question should render with a prompt and a text area
