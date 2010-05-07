@@ -15,9 +15,10 @@ The basic snippet that the scripts build from:
 
 The rest of the code in the repository is for exporting that results hash into a junit xml file that can be used by Hudson to report the number of passing and failing tests.
 
-This approach could be generalized for run other browser based tests on a continuous integration server.  For example:
-- jspec
-- qunit
+This approach could be generalized to run other browser based tests on a continuous integration server.  For example:
+
+* jspec
+* qunit
 
 The most functional way of using these frameworks is to open a browser and point it at a testing page configured for the framework.
 But that isn't easy to integrate with continuous integration server, because it wants a summary of the tests that it can save with the build and provide a standard report on the results. 
