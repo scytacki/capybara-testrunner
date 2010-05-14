@@ -19,7 +19,7 @@ rootDir = ".."
 
 # find all of the test subfolders in the tests of the current apps
 # FIXME should change to support nested folders inside of tests
-testFolders = Dir.glob( File.join(rootDir, "**", "tests", "*") )
+testFolders = Dir.glob( File.join(rootDir, "{apps,frameworks}","**", "tests", "*") )
 excludes = [File.join("tmp","**")]
 testFolders = testFolders.reject{|folder|
     excludes.any?{|exclude| File.fnmatch?(File.join(rootDir, exclude), folder)}
